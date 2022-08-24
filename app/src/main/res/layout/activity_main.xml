@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECECEC"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/vector2"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_toStartOf="@id/zihuatanejo"
+
+        android:background="@drawable/ic_baseline_location_on_24"
+        app:layout_constraintBottom_toBottomOf="@+id/zihuatanejo"
+        app:layout_constraintEnd_toStartOf="@+id/zihuatanejo"
+        app:layout_constraintTop_toTopOf="@+id/zihuatanejo" />
+
+    <TextView
+        android:id="@+id/zihuatanejo"
+        android:layout_width="119dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top"
+        android:text="@string/zihuatanejo"
+        android:textAppearance="@style/zihuatanejo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/vector"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/ic_baseline_filter_alt_24"
+        app:layout_constraintBottom_toBottomOf="@+id/zihuatanejo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/zihuatanejo" />
+
+    <TextView
+        android:id="@+id/select_cate"
+        android:layout_width="193dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top"
+        android:text="@string/select_cate"
+        android:textAppearance="@style/select_cate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zihuatanejo" />
+
+    <TextView
+        android:id="@+id/view_all"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/view_all"
+        android:textAppearance="@style/view_all"
+        app:layout_constraintBottom_toBottomOf="@+id/select_cate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/select_cate" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_cate" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/background_search"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_category">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:clickable="false"
+            android:src="@drawable/ic_baseline_search_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            android:textColor="#80010035"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="@string/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:padding="8dp"
+        android:background="@drawable/ellipse_activate"
+        android:src="@drawable/ic_baseline_qr_code_24"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/hot_sales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/hot_sales"
+        android:textAppearance="@style/hot_sales"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/see_more"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/see_more"
+        android:textAppearance="@style/view_all"
+        app:layout_constraintBottom_toBottomOf="@+id/hot_sales"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hot_sales" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hot_sales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hot_sales" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Internet Store</string>
+    <string name="zihuatanejo">Zihuatanejo, Gro</string>
+    <string name="select_cate">Select Category</string>
+    <string name="view_all">view all</string>
+    <string name="phones">Phones</string>
+    <string name="search">Search</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+    <string name="buy_now_">Buy now!</string>
+</resources>
