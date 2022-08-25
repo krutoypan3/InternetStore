@@ -4,12 +4,18 @@ import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import android.os.StrictMode.VmPolicy
+import android.widget.GridView
+import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import ru.oganesyan.artem.internetstore.api.GetHomePageItems
+import ru.oganesyan.artem.internetstore.bestsellerGridView.BestSellerGridViewAdapter
+import ru.oganesyan.artem.internetstore.bestsellerGridView.BestSellerGridViewItems
 import ru.oganesyan.artem.internetstore.categoryRecyclerView.RecyclerViewAdapter
 import ru.oganesyan.artem.internetstore.categoryRecyclerView.RecyclerViewItems
 import ru.oganesyan.artem.internetstore.hotsalesRecyclerView.HotSalesRecyclerViewAdapter
@@ -17,6 +23,9 @@ import ru.oganesyan.artem.internetstore.hotsalesRecyclerView.HotSalesRecyclerVie
 
 
 class MainActivity : AppCompatActivity() {
+    private var disposableHotSales: Disposable? = null
+    private var disposableBestSeller: Disposable? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -80,22 +89,10 @@ class MainActivity : AppCompatActivity() {
             datas = list
         )
 
-        val observable = Observable.create { subscriber ->
-            val homeStoreListItems: MutableList<MutableMap<String, String>> = mutableListOf()
-            val homeStoreListItem: MutableMap<String, String> = mutableMapOf()
-            homeStoreListItem["id"] = "12"
-            homeStoreListItem["is_new"] = "true"
-            homeStoreListItem["title"] = "Title"
-            homeStoreListItem["subtitle"] = "This is subtitle"
-            homeStoreListItem["picture"] = "https://avatars.githubusercontent.com/u/65137814?v=4"
-            homeStoreListItem["is_buy"] = "true"
-            homeStoreListItems.add(homeStoreListItem)
-            subscriber.onNext(homeStoreListItems)
-//            subscriber.onNext(GetHomePageItems().getItems())
+        disposableHotSales = Observable.create { subscriber ->
+            subscriber.onNext(GetHomePageItems().getHotSalesItems())
         }
-
-        val disposable = observable
-            .subscribeOn(Schedulers.io()) // Выбираем ядро на котором будет выполняться наш observable
+            .subscribeOn(Schedulers.newThread()) // Выбираем ядро на котором будет выполняться наш observable
             .map { mass ->
                 {
                     val hotSalesRecyclerViewItems: MutableList<HotSalesRecyclerViewItems> =
@@ -126,5 +123,43 @@ class MainActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
+
+        disposableHotSales = Observable.create { subscriber ->
+            subscriber.onNext(GetHomePageItems().getBestSellerItems())
+        }
+            .subscribeOn(Schedulers.newThread()) // Выбираем ядро на котором будет выполняться наш observable
+            .map { mass ->
+                {
+                    val bestSellerGridViewItems: MutableList<BestSellerGridViewItems> =
+                        mutableListOf()
+                    for (i in mass) bestSellerGridViewItems += BestSellerGridViewItems(
+                        i["id"].toString(),
+                        i["is_favorites"].toBoolean(),
+                        i["title"].toString(),
+                        i["price_without_discount"].toString(),
+                        i["discount_price"].toString(),
+                        i["picture"].toString()
+                    )
+                    bestSellerGridViewItems
+                }
+            }
+            .observeOn(AndroidSchedulers.mainThread()) // Выбираем ядро на котором будет выполняться наш код после observable
+            .subscribe {    // Код, выполняющийся после observable
+                try {
+                    val gridview: GridView = findViewById(R.id.gridview)
+                    gridview.adapter = BestSellerGridViewAdapter(
+                        context = this,
+                        datas = it()
+                    )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+    }
+
+    override fun onDestroy() {
+        disposableHotSales?.dispose()
+        disposableBestSeller?.dispose()
+        super.onDestroy()
     }
 }

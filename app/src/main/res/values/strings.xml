@@ -6,6 +6,7 @@
     <string name="phones">Phones</string>
     <string name="search">Search</string>
     <string name="hot_sales">Hot sales</string>
+    <string name="best_seller">Best seller</string>
     <string name="see_more">see more</string>
     <string name="buy_now_">Buy now!</string>
 </resources>

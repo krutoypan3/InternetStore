@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.DrawableImageViewTarget
+import ru.oganesyan.artem.internetstore.GlideCropImage
 import ru.oganesyan.artem.internetstore.R
 import ru.oganesyan.artem.internetstore.categoryRecyclerView.RecyclerViewHolder
 
@@ -41,6 +41,7 @@ class HotSalesRecyclerViewAdapter(private var act: Activity, private var datas: 
         subTextHotSales.text = item.subtitle
 
         Glide.with(act.applicationContext).load(item.picture)
+            .transform(GlideCropImage(backgroundImage, 0.7f))
             .into(backgroundImage)
 
     }
