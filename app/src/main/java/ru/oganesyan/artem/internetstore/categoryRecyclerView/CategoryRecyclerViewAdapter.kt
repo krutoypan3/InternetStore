@@ -9,14 +9,14 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.oganesyan.artem.internetstore.R
 
-class RecyclerViewAdapter(private var act: Activity, private var datas: List<RecyclerViewItems>) :
+class CategoryRecyclerViewAdapter(private var act: Activity, private var datas: List<CategoryRecyclerViewItems>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var mLayoutInflater: LayoutInflater = LayoutInflater.from(act.applicationContext);
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val recyclerViewItem = mLayoutInflater.inflate(R.layout.rv_category_item, parent, false)
-        return RecyclerViewHolder(recyclerViewItem)
+        return CategoryRecyclerViewHolder(recyclerViewItem)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

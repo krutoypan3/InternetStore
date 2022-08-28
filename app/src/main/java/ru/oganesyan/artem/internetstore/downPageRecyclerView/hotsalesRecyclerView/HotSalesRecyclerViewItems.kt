@@ -1,4 +1,4 @@
-package ru.oganesyan.artem.internetstore.hotsalesRecyclerView
+package ru.oganesyan.artem.internetstore.downPageRecyclerView.hotsalesRecyclerView
 
 class HotSalesRecyclerViewItems(
     var id: String,

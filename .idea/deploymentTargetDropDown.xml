@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Kruto\.android\avd\Pixel_2_API_31.avd" />
+            <value value="C:\Users\Kruto\.android\avd\5.4_FWVGA_API_29.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-08-24T14:51:27.941313700Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-08-27T17:45:01.973572300Z" />
   </component>
 </project>

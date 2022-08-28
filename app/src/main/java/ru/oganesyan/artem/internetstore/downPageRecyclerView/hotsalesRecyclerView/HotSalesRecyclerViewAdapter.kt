@@ -1,4 +1,4 @@
-package ru.oganesyan.artem.internetstore.hotsalesRecyclerView
+package ru.oganesyan.artem.internetstore.downPageRecyclerView.hotsalesRecyclerView
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.oganesyan.artem.internetstore.GlideCropImage
 import ru.oganesyan.artem.internetstore.R
-import ru.oganesyan.artem.internetstore.categoryRecyclerView.RecyclerViewHolder
+import ru.oganesyan.artem.internetstore.categoryRecyclerView.CategoryRecyclerViewHolder
 
 class HotSalesRecyclerViewAdapter(private var act: Activity, private var datas: List<HotSalesRecyclerViewItems>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -19,7 +19,7 @@ class HotSalesRecyclerViewAdapter(private var act: Activity, private var datas: 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val recyclerViewItem = mLayoutInflater.inflate(R.layout.rv_hot_sales_item, parent, false)
-        return RecyclerViewHolder(recyclerViewItem)
+        return HotSalesRecyclerViewHolder(recyclerViewItem)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -43,7 +43,6 @@ class HotSalesRecyclerViewAdapter(private var act: Activity, private var datas: 
         Glide.with(act.applicationContext).load(item.picture)
             .transform(GlideCropImage(backgroundImage, 0.7f))
             .into(backgroundImage)
-
     }
 
     override fun getItemCount(): Int {

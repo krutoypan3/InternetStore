@@ -1,4 +1,4 @@
-package ru.oganesyan.artem.internetstore.bestsellerGridView
+package ru.oganesyan.artem.internetstore.downPageRecyclerView
 
 class BestSellerGridViewItems(
     var id: String,

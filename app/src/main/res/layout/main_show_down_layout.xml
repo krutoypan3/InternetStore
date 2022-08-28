@@ -1,0 +1,67 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/hot_sales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/hot_sales"
+        android:textAppearance="@style/hot_sales"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/see_more"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/see_more"
+        android:textAppearance="@style/view_all"
+        app:layout_constraintBottom_toBottomOf="@+id/hot_sales"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hot_sales" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hot_sales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hot_sales" />
+
+    <TextView
+        android:id="@+id/Best_seller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/best_seller"
+        android:textAppearance="@style/hot_sales"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_hot_sales" />
+
+    <TextView
+        android:id="@+id/see_more_best_seller"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/see_more"
+        android:textAppearance="@style/view_all"
+        app:layout_constraintBottom_toBottomOf="@+id/Best_seller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Best_seller" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
