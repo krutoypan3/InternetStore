@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/explorer_item"
+        android:icon="@drawable/ic_baseline_explore_24"
+        android:title="Explorer" />
+    <item
+        android:id="@+id/cart_item"
+        android:icon="@drawable/ic_baseline_shopping_bag_24"
+        android:title="Cart" />
+    <item
+        android:id="@+id/liked_item"
+        android:icon="@drawable/heart"
+        android:title="Liked" />
+    <item
+        android:id="@+id/profile_item"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile" />
+</menu>

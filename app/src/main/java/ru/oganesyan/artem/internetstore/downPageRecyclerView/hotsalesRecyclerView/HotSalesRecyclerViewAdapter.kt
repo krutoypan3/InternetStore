@@ -8,11 +8,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import jp.wasabeef.glide.transformations.CropCircleWithBorderTransformation
+import jp.wasabeef.glide.transformations.CropTransformation
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 import ru.oganesyan.artem.internetstore.GlideCropImage
 import ru.oganesyan.artem.internetstore.R
 import ru.oganesyan.artem.internetstore.categoryRecyclerView.CategoryRecyclerViewHolder
 
-class HotSalesRecyclerViewAdapter(private var act: Activity, private var datas: List<HotSalesRecyclerViewItems>) :
+class HotSalesRecyclerViewAdapter(
+    private var act: Activity,
+    private var datas: List<HotSalesRecyclerViewItems>
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var mLayoutInflater: LayoutInflater = LayoutInflater.from(act.applicationContext);
@@ -41,7 +47,7 @@ class HotSalesRecyclerViewAdapter(private var act: Activity, private var datas: 
         subTextHotSales.text = item.subtitle
 
         Glide.with(act.applicationContext).load(item.picture)
-            .transform(GlideCropImage(backgroundImage, 0.7f))
+            .transform(GlideCropImage(backgroundImage, 0.7f), RoundedCornersTransformation(8, 0))
             .into(backgroundImage)
     }
 

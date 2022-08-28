@@ -133,10 +133,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigatin_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigatin_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/background_bottom_toolbar"
+        app:itemIconTint="@color/white"
+        app:itemTextAppearanceActive="@style/explorer"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
