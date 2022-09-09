@@ -5,19 +5,24 @@ import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import android.os.StrictMode.VmPolicy
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import ru.oganesyan.artem.internetstore.api.GetHomePageItems
-import ru.oganesyan.artem.internetstore.downPageRecyclerView.BestSellerGridViewItems
 import ru.oganesyan.artem.internetstore.categoryRecyclerView.CategoryRecyclerViewAdapter
 import ru.oganesyan.artem.internetstore.categoryRecyclerView.CategoryRecyclerViewItems
+import ru.oganesyan.artem.internetstore.downPageRecyclerView.BestSellerGridViewItems
 import ru.oganesyan.artem.internetstore.downPageRecyclerView.DownPageRecyclerViewAdapter
 import ru.oganesyan.artem.internetstore.downPageRecyclerView.hotsalesRecyclerView.HotSalesRecyclerViewItems
 
@@ -164,6 +169,32 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
             }
+
+
+        val container = findViewById<View>(R.id.containerBottomSheet)
+
+        val bottomFragment = BottomSheetFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.containerBottomSheet, bottomFragment)
+            .commit()
+
+        val bottomSheetBehaviour = BottomSheetBehavior.from(container)
+        bottomSheetBehaviour.state = BottomSheetBehavior.STATE_HIDDEN
+        var i = true
+
+        val filter: ImageView = findViewById(R.id.filter)
+        filter.setOnClickListener {
+            if (i) {
+                i = !i
+                bottomSheetBehaviour.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+            else
+            {
+                i = !i
+                bottomSheetBehaviour.state = BottomSheetBehavior.STATE_HIDDEN
+            }
+        }
+
     }
 
     override fun onDestroy() {

@@ -6,9 +6,11 @@
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_best_seller_item.xml" value="0.1905" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_bottom_toolbar.xml" value="0.2235" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_btn_hot_sales.xml" value="0.22" />
+        <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_close_btn.xml" value="0.2235" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_corners_hot_sales.xml" value="0.3435" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_round_hearth.xml" value="0.1815" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_search.xml" value="0.1745" />
+        <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/background_white_corners.xml" value="0.148" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/ellipse_activate.xml" value="0.1745" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/ellipse_not_activate.xml" value="0.3065" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/hot_sales_corners.xml" value="0.3435" />
@@ -18,7 +20,10 @@
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/ic_baseline_qr_code_24.xml" value="0.3065" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1745" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/drawable/rv_category_item.xml" value="0.3065" />
+        <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/activity_bottom_sheet.xml" value="0.3625" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/bottom_filter_popup.xml" value="0.3625" />
+        <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/grid_view_cell.xml" value="0.33" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/main_show_down_gridview.xml" value="0.3625" />
         <entry key="..\:/Users/Kruto/OneDrive/Desktop/MyJavaProjects/InternetStore/app/src/main/res/layout/main_show_down_layout.xml" value="0.3614583333333333" />
